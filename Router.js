@@ -2,15 +2,7 @@ const express = require("express");
 const route = express.Router();
 const multer = require("multer");
 const path = require("path");
-const storage = multer.diskStorage({
-  destination: function (req, file, cb) {
-    cb(null, "uploads/"); // Set upload destination
-  },
-  filename: function (req, file, cb) {
-    const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(null, uniqueSuffix + path.extname(file.originalname)); // Name the file uniquely
-  },
-});
+const storage = multer.memoryStorage(); // Store file in memory as a buffer
 const upload = multer({ storage: storage });
 
 const { authenticateUser, verifyUser } = require("./Controller/Middleware");
