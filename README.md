@@ -1,17 +1,9 @@
+
 # Document Management System
 
-## Table of Contents
-- [Introduction](#introduction)
-- [Features](#features)
-- [Technologies Used](#technologies-used)
-- [Installation](#installation)
-- [Usage](#usage)
-- [API Endpoints](#api-endpoints)
-- [Contributing](#contributing)
-- [License](#license)
-
-## Introduction
+## Introduction [Demo](https://documentupload.vercel.app)
 The Document Management System (DMS) is a web application that allows users to manage their documents efficiently. It provides features for authentication, document uploading, sharing, and a dashboard to showcase all uploaded or shared documents.
+
 
 ## Features
 1. **Authentication:**
@@ -38,14 +30,74 @@ The Document Management System (DMS) is a web application that allows users to m
   - CSS
   - tailwind css (for styling)
 
-## Installation
-To get a local copy up and running follow these simple steps.
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/pranavyemul76/documentupload.git
+```
+
+Go to the project directory
+
+```bash
+  cd documentupload
+```
+
+Install dependencies
+
+```bash
+  npm install
+```
+
+Start the server
+
+```bash
+  npm run start
+```
+## API Reference
 
 
-   ```bash
-   git clone https://github.com/pranavyemul76/documentupload.git
-   cd documentupload
-   npm install
-   Go to http://localhost:8080
+#### Register a new user
+```http
+POST /api/register
+```
+#### Log in a user
+
+```http
+  POST /api/login
+```
+
+#### Verify OTP
+```http
+POST /api/verify
+```
+#### Get users 
+
+```http
+ GET /api/userlist
+```
+#### Retrieve all documents for the logged-in user
+```http
+POST GET /api/documents
+```
+#### Upload a new document 
+
+```http
+ GET POST /api/upload
+```
+#### Share a document with another user 
+```http
+POST /api/share
+```
+#### Get uploaded files
+
+```http
+ GET /api/getuploads
+```
+
+
+
 
 
