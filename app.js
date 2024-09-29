@@ -9,11 +9,17 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 const corsOptions = {
-  origin: "http://localhost:3000", // Specify the exact origin
+  origin: "*", // Specify the exact origin
   credentials: true,
 };
 app.use(cors(corsOptions));
 app.use("/", Route);
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "build")));
+  app.get("*", function (req, res) {
+    res.sendFile(path.join(__dirname, "build", "index.html"));
+  });
+}
 mongoose
   .connect(process.env.URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then((res) => {
