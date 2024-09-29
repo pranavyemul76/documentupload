@@ -1,0 +1,191 @@
+step 1: login
+     - check the user verify if already exist then next else creates new password
+     validity->  let emailRegex = new RegExp("[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}"); 
+                 password = length >8
+step 2: switch
+step 3: restaurant
+
+
+
+
+
+
+ const isValidHanlder = (name, value) => {
+    let emailRegex = new RegExp("[a-zA-Z0-9]+@[a-zA-Z]+.[a-zA-Z]{2,3}");
+    switch (name) {
+      case "email":
+        if (value.length < 3) {
+          setIsValid({
+            ...isValid,
+            email: { valid: false, error: "Invalid Input!" },
+          });
+        } else if (!emailRegex.test(value)) {
+          setIsValid({
+            ...isValid,
+            email: { valid: false, error: "Invalid Email!" },
+          });
+        } else {
+          setIsValid({
+            ...isValid,
+            email: { valid: true, error: "" },
+          });
+        }
+        break;
+      case "password":
+        if (value.length < 3) {
+          setIsValid({
+            ...isValid,
+            password: { valid: false, error: "Invalid Password!" },
+          });
+        } else if (value.length < 8) {
+          setIsValid({
+            ...isValid,
+            password: {
+              valid: false,
+              error: "Password must be 8 character long!",
+            },
+          });
+        } else {
+          setIsValid({
+            ...isValid,
+            password: { valid: true, error: "" },
+          });
+        }
+        break;
+      case "newPassword":
+        if (value.length < 3) {
+          setIsValid({
+            ...isValid,
+            newPassword: {
+              valid: false,
+              error: "Invalid Password!",
+            },
+          });
+        } else if (value.length < 8) {
+          setIsValid({
+            ...isValid,
+            newPassword: {
+              valid: false,
+              error: "Password must be 8 character long!",
+            },
+          });
+        } else {
+          setIsValid({
+            ...isValid,
+            newPassword: { valid: true, error: "" },
+          });
+        }
+        break;
+      case "cpassword":
+        if (value.length < 3) {
+          setIsValid({
+            ...isValid,
+            cpassword: { valid: false, error: "Invalid Password!" },
+          });
+        } else if (value.length < 8) {
+          setIsValid({
+            ...isValid,
+            cpassword: {
+              valid: false,
+              error: "Password must be 8 character long!",
+            },
+          });
+        } else if (value !== formState.newPassword) {
+          setIsValid({
+            ...isValid,
+            cpassword: {
+              valid: false,
+              error: "Password should be same!",
+            },
+          });
+        } else {
+          setIsValid({
+            ...isValid,
+            cpassword: { valid: true, error: "" },
+          });
+        }
+        break;
+      default:
+        return;
+    }
+  };
+
+
+
+
+----------------------
+  Auth.currentSession()
+      .then((data) => {
+        if (data) {
+          setLoading(true);
+          if( data.getIdToken().payload["custom:Role"]==="RestAdmin"){
+          localStorage.setItem(
+            "COgnitoRole",
+            data.getIdToken().payload["custom:Role"]
+          );
+          }else{
+            const Distr=JSON.parse(data.getIdToken().payload["custom:rest"]).customClaimValue;
+             localStorage.setItem(
+             "COgnitoRole",
+             JSON.stringify(Distr)
+          );
+          }
+          let idToken = data.getIdToken().getJwtToken();
+          autoLoginHandler(idToken);
+        }
+      })
+      .catch((err) => console.log("not logged in",err));
+  
+---------------------------
+ Auth.signIn(email.toLowerCase(), password)
+
+sikapiw931@giratex.com Byjus123# trans
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

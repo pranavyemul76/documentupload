@@ -1,0 +1,13 @@
+2 years of experience in Full stack development strong background in optimization. I have honed my skills in developing scalable and efficient web applications using MongoDB, Express.js, React, and Node.js. One of my notable achievements was leading a project that optimized the application performance by 30%, resulting in improved user experience and reduced server costs. My ability to analyze complex problems and implement effective solutions has been a key factor in my success.I look forward to discussing how I can contribute to your project.
+
+Why I'm a Great Fit:
+Next.js Expertise: Proficient in server-side rendering (SSR), static site generation (SSG), and API routes for optimal performance.
+React.js Proficiency: Skilled in creating dynamic, interactive components and managing state with Redux and Context API.
+Optimization Focus: Expertise in performance techniques like code-splitting, lazy loading, and image optimization.
+Collaborative Approach: Strong communication and a commitment to aligning with your vision and feedback.
+
+Thank you for considering my application.
+
+Best regards,
+
+Pranav Yemul

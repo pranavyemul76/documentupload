@@ -1,0 +1,35 @@
+1. enter the email and password
+2. check the email is authentication or not
+3. if not authentication then redirect to new password page
+4. else if check email connected with multiple restaurant
+5. if multiple restaurants then redirect to select-restaurant page
+6. after the select restaurant redirect to live order
+
+
+
+{
+    "isSignedIn": false,
+    "nextStep": {
+        "signInStep": "CONFIRM_SIGN_IN_WITH_NEW_PASSWORD_REQUIRED",
+        "missingAttributes": []
+    }
+}
+
+
+
+{
+    "isSignedIn": true,
+    "nextStep": {
+        "signInStep": "DONE"
+    }
+}
+
+mapping the multiple restaurants and select one 
+reset user password
+update the user password
+syntax the changes of react router dom new version six
+
+
+app.js
+check the user login is authenticated if not redirect login if the user not set the password yet then redirect if the multiple restaurants then redirect to select restaurant
+

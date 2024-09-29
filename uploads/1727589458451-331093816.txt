@@ -1,0 +1,10 @@
+add the loading in login page
+new error handling while login user incorrect password and email
+add the loading in all pages while the fetching the api or data
+on select page if user not select restaurant but exit the page refetch the switch api
+on back clear the localstorage
+set the axios service
+
+user sign up or not 
+if not sign up up then redirect verify user
+else login
