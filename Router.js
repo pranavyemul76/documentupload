@@ -16,12 +16,6 @@ const upload = multer({ storage: storage });
 const { authenticateUser, verifyUser } = require("./Controller/Middleware");
 const DocumentControllers = require("./Controller/Document");
 const UserControllers = require("./Controller/User");
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static(path.join(__dirname, "build")));
-  app.get("*", function (req, res) {
-    res.sendFile(path.join(__dirname, "build", "index.html"));
-  });
-}
 route.post(
   "/api/upload",
   express.static("uploads"),
